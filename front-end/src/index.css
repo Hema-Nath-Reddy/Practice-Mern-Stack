@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,880;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,880&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #102c57;
+  color: white;
+  overflow-x: hidden;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  font-family: "Roboto Mono", serif;
+  width: min-content;
+  height: 100vh;
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  height: fit-content;
+  margin: 2vw 0;
+  width: 100%;
+  padding: 1vw;
+  z-index: 2;
+}
+nav a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #102c57;
+  transition: width 0.5s;
+  z-index: -1;
+  border-radius: 0 0.5vw 0.5vw 0;
+}
+nav a:hover::before {
+  width: 75%;
+}
+nav .container {
+  margin: 0.5vw;
+  margin-top: auto;
+  font-family: poppins;
+  background-color: #a7bbec;
+  border-radius: 0.5vw;
+  color: black;
+}
+nav .container .inner {
+  border-radius: inherit;
+  background-color: #a7bbec;
+  padding-top: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0.25vw;
+}
+nav .container .settings {
+  padding: 0.5vw 0;
+  margin: 0 0.25vw;
+}
+nav .container .inner button:not(.createArticle) {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-family: roboto mono;
+  padding: 0.25vw;
+  font-size: 1vw;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: black;
+  cursor: pointer;
+}
+.createArticle {
+  width: 88%;
+  background-color: #0b57d0;
+  border: none;
+  color: white;
+  font-family: "Space Mono", Consolas, Monaco, "Andale Mono", monospace;
+  border-radius: max(0.25dvw, 0.25dvh);
+  padding: max(0.5dvw, 0.5dvh);
+  cursor: pointer;
+  font-size: 1dvw;
+  margin: 0 auto;
+  margin-bottom: 1vw;
+}
+.createArticle:hover {
+  background-color: #0e4eb5;
+}
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 83%;
+  margin-top: -3vw;
+}
+
+hr {
+  border-color: black;
+}
+h1 {
+  font-family: "Neuton", serif;
+  font-weight: bold;
+  font-size: 5vw;
+}
+.home p {
+  font-family: poppins;
+  font-size: 1.75vw;
+}
+.home p span {
+  background-color: #a7bbec;
+  color: black;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 83%;
+  margin-left: 1.5vw;
+}
+.about ol {
+  margin-left: 2vw;
+  font-family: poppins;
+  font-family: 0.75vw;
+}
+.articles-list,
+.articlePage,
+.about {
+  width: 83%;
+  margin-left: 1.5vw;
+  height: max-content;
+  overflow-y: auto;
+}
+.articles-list a {
+  text-decoration: none;
+  color: white;
+}
+.articles-list ol {
+  margin: 1vw;
+}
+.articles-list li {
+  margin: 2vw;
+}
+h3 {
+  font-family: "Neuton", serif;
+  font-weight: bold;
+  font-size: 2vw;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+.articles-list h3::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: black;
+  left: 0;
+  bottom: 0;
+  transition: linear width 0.5s;
+}
+.articles-list a:hover h3::before {
+  width: 100%;
+}
+.articles-list p,
+.articlePage p {
+  font-family: poppins;
+  font-size: 1vw;
+}
+.articlePage p {
+  margin: 1vw 0;
+  width: 88%;
+  text-align: justify;
+  line-height: 1.5;
+}
+.vote {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 88%;
+}
+.vote button,
+.add-comment button {
+  background-color: transparent;
+  border: none;
+  fill: white;
+  cursor: pointer;
+  margin-left: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: white;
+  transition: ease all 0.5s;
+}
+.vote button svg,
+.input button svg {
+  width: 1.5vw;
+  aspect-ratio: 1/1;
+  fill: #e8eaed;
+}
+.vote button:hover {
+  border: 1px solid white;
+}
+.add-comment {
+  margin-top: 3vw;
+}
+.input {
+  position: relative;
+  width: 88%;
+}
+.input input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 1vw;
+  font-size: 1vw;
+  font-family: poppins;
+  border-radius: 0.5vw;
+  outline: none;
+  color: white;
+}
+.input button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.articlePage hr {
+  width: 88%;
+  border: 1px solid gray;
+}
+.comments-list .comment-user {
+  font-size: 1vw;
+  margin: 0;
+}
+.comments-list .comment {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2vw;
+  color: gray;
+}
+.individual-comment {
+  margin: 1vw 0;
+}
+.back-btn {
+  text-decoration: none;
+  color: white;
+  font-family: roboto mono;
+  background-color: #0e4eb5;
+  padding: 0.5vw 1vw;
+  border-radius: 0.5vw;
+  margin-bottom: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+}
+.back-btn svg {
+  width: 1.5vw;
+  aspect-ratio: 1/1;
+  fill: #e8eaed;
+}
+.login {
+  width: 83%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.login h1 {
+  margin: 1vw;
+}
+.form input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 1vw;
+  font-size: 1vw;
+  font-family: poppins;
+  border-radius: 0.5vw;
+  outline: none;
+  color: white;
+  margin: 1vw 0;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.form button:not(.log-btn) {
+  width: 4.75vw;
+  height: 3vw;
+  border-radius: 0.5vw;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.google-login {
+  background-color: white;
+}
+.github-login {
+  background-color: #2f363d;
+}
+.form button svg {
+  width: 1.5vw;
+  aspect-ratio: 1/1;
+  fill: #ffffff;
+}
+.form {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.log-btn {
+  width: 100%;
+  border: none;
+  padding: 1vw;
+  background-color: #0b57d0;
+  font-family: roboto mono;
+  border-radius: 0.5vw;
+  color: white;
+  cursor: pointer;
+}
+.log-btn:hover {
+  background-color: #0e4eb5;
+}
+.form a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  margin: 1vw auto;
+  font-family: roboto mono;
+  position: relative;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+}
+.form a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: ease all 0.5s;
+}
+.form a:hover::after {
+  width: 100%;
+}
+.form h1 {
+  text-align: center;
+}
