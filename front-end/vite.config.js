@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://71zwlnt0-8001.inc1.devtunnels.ms",
+        target: "https://blog-website-beta-cyan.vercel.app/",
         changeOrigin: true,
       },
     },

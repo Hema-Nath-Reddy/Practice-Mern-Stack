@@ -4,6 +4,7 @@ import admin from "firebase-admin";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,11 +17,17 @@ admin.initializeApp({
 const app = express();
 
 app.use(express.json());
-
+app.use(
+  cors(
+    (origin = "https://blog-website-beta-cyan.vercel.app/"),
+    (methods = "GET,HEAD,PUT,PATCH,POST,DELETE"),
+    (credentials = true)
+  )
+);
 let db;
 async function connectToDB() {
   const uri = process.env.MONGODB_USERNAME
-    ? `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.dsyzl.mongodb.net/`
+    ? `mongodb+srv://hemanathreddyyeruva:wLCCQCm6u8HYcSli@cluster0.eb6ez.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
     : "mongodb://127.0.0.1:27017";
 
   const client = new MongoClient(uri, {
