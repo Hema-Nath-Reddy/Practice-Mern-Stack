@@ -20,7 +20,7 @@ app.use(express.json());
 let db;
 async function connectToDB() {
   const uri = process.env.MONGODB_USERNAME
-    ? `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.wygkd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+    ? `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.dsyzl.mongodb.net/`
     : "mongodb://127.0.0.1:27017";
 
   const client = new MongoClient(uri, {
@@ -33,7 +33,7 @@ async function connectToDB() {
 
   await client.connect();
 
-  db = client.db("full-stack-react-db");
+  db = client.db("practice-full-stack-react-db");
 }
 
 app.use(express.static(path.join(__dirname, "../dist")));
@@ -41,20 +41,6 @@ app.use(express.static(path.join(__dirname, "../dist")));
 app.get(/^(?!\/api).+/, async (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
-async function connectToDb() {
-  const uri = "mongodb://127.0.0.1:27017";
-
-  const client = new MongoClient(uri, {
-    serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
-    },
-  });
-  await client.connect();
-
-  db = client.db("full-stack-practice");
-}
 
 app.get("/api/articles/:name", async (req, res) => {
   const { name } = req.params;
@@ -203,7 +189,7 @@ app.post("/api/articles/:name/comments", async (req, res) => {
 });
 
 async function start() {
-  await connectToDb();
+  await connectToDB();
   app.listen(8001, function () {
     console.log("Server is listening on port 8001");
   });
