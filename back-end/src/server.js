@@ -26,9 +26,7 @@ app.use(
 );
 let db;
 async function connectToDB() {
-  const uri = process.env.MONGODB_USERNAME
-    ? `mongodb+srv://hemanathreddyyeruva:wLCCQCm6u8HYcSli@cluster0.eb6ez.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-    : "mongodb://127.0.0.1:27017";
+  const uri = `mongodb+srv://practice-full-stack-react-server:peciPWJVpMMU8wwS@cluster0.d3kce.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
   const client = new MongoClient(uri, {
     serverApi: {
