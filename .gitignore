@@ -28,3 +28,4 @@ back-end/prod-env.yaml
 *.njsproj
 *.sln
 *.sw?
+.vercel
