@@ -33,7 +33,7 @@ export default function ArticlePage() {
       const token = user && (await user.getIdToken());
       const headers = token ? { authtoken: token } : {};
       const response = await axios.post(
-        "/api/articles/" + name + "/upvote",
+        "https://practice-mern-stack.onrender.com/api/articles/" + name + "/upvote",
         null,
         { headers }
       );
@@ -52,7 +52,7 @@ export default function ArticlePage() {
       const token = user && (await user.getIdToken());
       const headers = token ? { authtoken: token } : {};
       const response = await axios.post(
-        "/api/articles/" + name + "/cancel-upvote",
+        "https://practice-mern-stack.onrender.com/api/articles/" + name + "/cancel-upvote",
         null,
         { headers }
       );
@@ -71,7 +71,7 @@ export default function ArticlePage() {
       const token = user && (await user.getIdToken());
       const headers = token ? { authtoken: token } : {};
       const response = await axios.post(
-        "/api/articles/" + name + "/downvote",
+        "https://practice-mern-stack.onrender.com/api/articles/" + name + "/downvote",
         null,
         { headers }
       );
@@ -89,7 +89,7 @@ export default function ArticlePage() {
       const token = user && (await user.getIdToken());
       const headers = token ? { authtoken: token } : {};
       const response = await axios.post(
-        "/api/articles/" + name + "/cancel-downvote",
+        "https://practice-mern-stack.onrender.com/api/articles/" + name + "/cancel-downvote",
         null,
         { headers }
       );
@@ -107,7 +107,7 @@ export default function ArticlePage() {
     const token = user && (await user.getIdToken());
     const headers = token ? { authtoken: token } : {};
     const response = await axios.post(
-      "/api/articles/" + name + "/comments",
+      "https://practice-mern-stack.onrender.com/api/articles/" + name + "/comments",
       {
         postedBy: user.displayName,
         text: comment,
@@ -159,7 +159,7 @@ export default function ArticlePage() {
 }
 
 export async function loader({ params }) {
-  const response = await axios.get("/api/articles/" + params.name);
+  const response = await axios.get("https://practice-mern-stack.onrender.com/api/articles/" + params.name);
   const { upvotes, comments, downvotes, upvoteIds, downvoteIds } =
     response.data;
 

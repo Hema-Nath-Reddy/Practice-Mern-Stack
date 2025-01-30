@@ -4,12 +4,12 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
+  /*  server: {
     proxy: {
       "/api": {
-        target: "https://blog-website-beta-cyan.vercel.app/",
+        target: "https://practice-mern-stack.onrender.com",
         changeOrigin: true,
       },
     },
-  },
+  }, */
 });
