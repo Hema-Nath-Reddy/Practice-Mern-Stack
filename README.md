@@ -16,7 +16,7 @@
 <ol>
   <li>
     Clone the repo
-    <pre><code>git clone https://github.com/Hema-Nath-Reddy/Practic-Mern-Stack.git
+    <pre><code>git clone https://github.com/Hema-Nath-Reddy/Practice-Mern-Stack.git
 cd filename</code></pre>
   </li>
   <li>
