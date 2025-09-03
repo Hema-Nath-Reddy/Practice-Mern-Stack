@@ -16,21 +16,21 @@
 <ol>
   <li>
     Clone the repo
-    <pre><code>git clone https://github.com/Hema-Nath-Reddy/Mini-Project-verdeX.git
-cd verdex</code></pre>
+    <pre><code>git clone https://github.com/Hema-Nath-Reddy/Practic-Mern-Stack.git
+cd filename</code></pre>
   </li>
   <li>
     Install dependencies for both frontend and backend
-    <pre><code>cd client && npm install
+    <pre><code>cd front-end && npm install
 cd server && npm install</code></pre>
   </li>
   <li>
     Set up environment variables (<code>.env</code> file in backend)
-    <pre><code>SUPABASE_URL=your_database_url
-SUPABASE_ANON_KEY=your_secret_key</code></pre>
+    <pre><code>MONGODB_USERNAME=your_mongodb_username
+MONGODB_PASSWORD=your_mongodb_password</code></pre>
   </li>
   <li>
-    Start backend server
+    Start back-end server
     <pre><code>cd server
 npm run dev</code></pre>
   </li>
